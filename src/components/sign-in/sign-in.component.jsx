@@ -19,18 +19,18 @@ class SignIn extends React.Component {
         const { email, password } = this.state;
         try {
             await auth.signInWithEmailAndPassword(email, password);
-            this.setState({ email: '', password: ''});
+            this.setState({ email: '', password: '' });
         } catch (error) {
             console.log(error);
         }
 
-        this.setState({email: '', password: ''})
+        this.setState({ email: '', password: '' })
     }
 
     handleChange = event => {
-        const {value, name} = event.target;
+        const { value, name } = event.target;
 
-        this.setState({[name]: value})
+        this.setState({ [name]: value })
     }
 
     render() {
@@ -45,14 +45,14 @@ class SignIn extends React.Component {
                         label="email"
                         value={this.state.email}
                         handleChange={this.handleChange}
-                        required/>
+                        required />
                     <FormInput
                         name='password'
                         type='password'
                         label="password"
                         value={this.state.password}
                         handleChange={this.handleChange}
-                        required/>
+                        required />
 
                     <div className='buttons'>
                         <CustomButton type='submit'>Sign in</CustomButton>
